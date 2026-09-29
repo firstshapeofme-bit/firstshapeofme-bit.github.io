@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10191e">
+  <meta name="description" content="Steer a storm-tossed tall ship inside a glowing glass bottle.">
+  <meta property="og:title" content="Tempest in a Bottle — a tiny ocean to explore">
+  <meta property="og:description" content="A little ship, a restless sea, and nowhere for the weather to go. Come take the wheel.">
+  <meta property="og:type" content="website">
+  <title>Tempest in a Bottle — a tiny ocean to explore</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Tempest in a Bottle home"><span class="brand-mark" aria-hidden="true">✳</span><span>STORMGLASS</span></a>
+      <div class="edition"><span class="live-dot"></span> AN INTERACTIVE STUDY · NO. 07</div>
+    </header>
+
+    <section class="intro" aria-labelledby="title">
+      <div>
+        <p class="eyebrow">THE NORTH ATLANTIC, SOMEWHERE IN A BOTTLE</p>
+        <h1 id="title">A whole storm.<br><em>Held in glass.</em></h1>
+      </div>
+      <p class="intro-note">A little ship, a restless sea, and nowhere for the weather to go. Take a closer look, or step aboard.</p>
+    </section>
+
+    <section class="scene-card" aria-label="Interactive ship in a bottle">
+      <div class="scene-topline"><span><i class="tiny-star">✦</i> TEMPEST IN A BOTTLE</span><span class="scene-hint" id="sceneHint">TAP THE SHIP TO TAKE THE WHEEL</span></div>
+      <div class="stage-wrap" id="stageWrap">
+        <canvas id="world" width="1200" height="700" aria-label="A sailing ship crossing rough blue water inside a glass bottle. Click the ship to take the wheel."></canvas>
+        <div class="captain-tip" id="captainTip" aria-live="polite"><span class="keycap">A</span><span class="keycap">D</span> or steer below</div>
+        <div class="touch-steer" id="touchSteer" aria-label="Ship steering controls">
+          <button type="button" data-steer="-1" aria-label="Steer to port">◀ <span>PORT</span></button>
+          <button type="button" data-steer="1" aria-label="Steer to starboard"><span>STARBOARD</span> ▶</button>
+        </div>
+        <div class="stage-caption" id="viewCaption"><span class="caption-pulse"></span> A SEA IN A BOTTLE <span class="caption-sep">/</span> 4° 18′ N, 27° 06′ W</div>
+      </div>
+      <div class="controls">
+        <div class="control-group weather-group" role="group" aria-label="Choose sea conditions">
+          <span class="control-label">WEATHER</span>
+          <button class="weather-choice" type="button" data-weather="calm" aria-pressed="false"><span class="weather-icon">☼</span> Still</button>
+          <button class="weather-choice" type="button" data-weather="gale" aria-pressed="true"><span class="weather-icon">≋</span> Gale</button>
+          <button class="weather-choice" type="button" data-weather="tempest" aria-pressed="false"><span class="weather-icon">ϟ</span> Tempest</button>
+        </div>
+        <div class="control-group action-group">
+          <button class="action-button lightning-button" id="lightning" type="button"><span class="action-icon">ϟ</span><span>Call lightning</span></button>
+          <button class="action-button sound-button" id="sound" type="button" aria-pressed="false"><span class="sound-glyph" aria-hidden="true">◖</span><span>Sound off</span></button>
+        </div>
+        <div class="storm-control">
+          <label class="control-label" for="stormLevel">STORM <span id="stormLabel">III</span></label>
+          <input type="range" id="stormLevel" min="0" max="100" value="68" aria-label="Storm intensity">
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-row">
+      <p><span class="footer-flourish">✦</span> <span id="footerStatus" role="status" aria-live="polite">The wind is rising. The little ship is holding course.</span></p>
+      <button class="share-button" id="share" type="button"><span aria-hidden="true">↗</span> Share this little world</button>
+    </footer>
+    <p class="credit">MADE FOR THE LOVE OF SMALL, IMPOSSIBLE THINGS</p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
